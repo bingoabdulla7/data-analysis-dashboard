@@ -1,15 +1,31 @@
-# 📊 Data Analysis Dashboard
+# ☕️ Café Sales Dashboard
 
-A modern, interactive data analysis application built with Python and Streamlit. This project demonstrates how to create a web-based dashboard for data visualization and analysis.
+A modern, interactive café sales analysis application built with Python and Streamlit. This project demonstrates how to create a web-based dashboard for data visualization and analysis, with realistic item sales patterns and revenue simulation.
 
 ## 🚀 Features
 
-- **Interactive Data Visualization**: Multiple chart types including line plots, heatmaps, and scatter plots
-- **Real-time Data Generation**: Generate sample data with customizable parameters
-- **Data Filtering**: Filter data by category and date range
+- **Realistic Café Data**: Simulates daily sales for multiple item types, with temperature-driven demand patterns
+- **Revenue Simulation**: Assigns prices to each item and calculates daily revenue
+- **Interactive Data Visualization**: Multiple chart types including quantity/revenue trends, heatmaps, and bar charts
+- **Data Filtering**: Filter by item type and date range
 - **Export Functionality**: Download filtered data as CSV
 - **Responsive Design**: Modern, mobile-friendly interface
-- **Statistical Analysis**: Summary statistics and category analysis
+- **Statistical Analysis**: Summary statistics and item type analysis
+
+## ☕️ Item Types and Prices
+
+| Item Type  | Price ($) |
+|------------|-----------|
+| Coffee     | 3.00      |
+| Tea        | 2.50      |
+| Pastry     | 2.00      |
+| Sandwich   | 5.00      |
+| Juice      | 3.50      |
+| Salad      | 4.50      |
+| Smoothie   | 4.00      |
+| Cake       | 3.50      |
+
+- **Sales patterns are temperature-driven**: e.g., more smoothies/juice on hot days, more coffee/pastry on cold days.
 
 ## 📋 Prerequisites
 
@@ -20,17 +36,15 @@ A modern, interactive data analysis application built with Python and Streamlit.
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/data-analysis-dashboard.git
-   cd data-analysis-dashboard
+   git clone https://github.com/yourusername/cafe-sales-dashboard.git
+   cd cafe-sales-dashboard
    ```
 
 2. **Create a virtual environment** (recommended):
    ```bash
    python -m venv venv
-   
    # On Windows
    venv\Scripts\activate
-   
    # On macOS/Linux
    source venv/bin/activate
    ```
@@ -48,7 +62,6 @@ A modern, interactive data analysis application built with Python and Streamlit.
    ```bash
    streamlit run streamlit_app.py
    ```
-
 2. **Open your browser** and navigate to `http://localhost:8501`
 
 ### Running the Core Application
@@ -62,33 +75,35 @@ python app.py
 ## 📊 Dashboard Features
 
 ### Data Generation
-- Generate sample data with customizable number of records
-- Data includes sales, temperature, humidity, and category information
-- Realistic data patterns for demonstration purposes
+- Generates realistic daily sales for each item type
+- Simulates temperature and humidity for each day
+- Calculates revenue based on item prices
 
 ### Visualizations
-- **Sales Trend**: Line chart showing sales over time
-- **Correlation Heatmap**: Matrix showing relationships between variables
-- **Category Distribution**: Bar chart of data distribution by category
-- **Temperature vs Humidity**: Scatter plot with sales coloring
+- **Quantity Sold Trend**: Line chart showing total quantity sold per day
+- **Revenue Trend**: Line chart showing total revenue per day
+- **Correlation Heatmap**: Matrix showing relationships between quantity, revenue, temperature, etc.
+- **Item Type Distribution**: Bar chart of sales by item type
+- **Temperature vs Humidity**: Scatter plot colored by quantity sold
 
 ### Data Analysis
 - Summary statistics for all numeric columns
-- Category-wise analysis with aggregations
-- Interactive filtering by category and date range
+- Item type analysis (mean, std, count, revenue, etc.)
+- Interactive filtering by item type and date range
 - Export filtered data to CSV
 
 ## 🏗️ Project Structure
 
 ```
-data-analysis-dashboard/
+cafe-sales-dashboard/
 ├── app.py                 # Core data analysis functionality
 ├── streamlit_app.py       # Streamlit web interface
 ├── requirements.txt       # Python dependencies
-├── README.md             # Project documentation
-├── .gitignore           # Git ignore file
-└── .streamlit/          # Streamlit configuration (optional)
-    └── config.toml
+├── README.md              # Project documentation
+├── .gitignore             # Git ignore file
+├── .streamlit/            # Streamlit configuration (optional)
+│   └── config.toml
+└── DEPLOYMENT.md          # Deployment instructions
 ```
 
 ## 🚀 Deployment
@@ -101,7 +116,6 @@ data-analysis-dashboard/
    git commit -m "Initial commit"
    git push origin main
    ```
-
 2. **Deploy on Streamlit Cloud**:
    - Go to [share.streamlit.io](https://share.streamlit.io)
    - Connect your GitHub account
@@ -109,32 +123,12 @@ data-analysis-dashboard/
    - Set the main file path to `streamlit_app.py`
    - Click "Deploy"
 
-### Deploy to Heroku
-
-1. **Create a `Procfile`**:
-   ```
-   web: streamlit run streamlit_app.py --server.port=$PORT --server.address=0.0.0.0
-   ```
-
-2. **Deploy using Heroku CLI**:
-   ```bash
-   heroku create your-app-name
-   git push heroku main
-   ```
-
 ## 🛠️ Customization
 
-### Adding New Chart Types
-
-1. Add new methods to the `DataAnalyzer` class in `app.py`
-2. Update the chart selection in `streamlit_app.py`
-3. Add corresponding visualization code
-
-### Modifying Data Structure
-
-1. Update the `generate_sample_data` method in `app.py`
-2. Adjust the dashboard components in `streamlit_app.py`
-3. Update the filtering and analysis sections as needed
+- Add new item types or adjust prices in `app.py`
+- Change sales patterns for different weather conditions
+- Add new visualizations or metrics in `streamlit_app.py`
+- Connect to real café data sources
 
 ## 📝 Contributing
 
@@ -151,8 +145,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🤝 Support
 
 If you have any questions or need help with the project, please:
-
-1. Check the [Issues](https://github.com/yourusername/data-analysis-dashboard/issues) page
+1. Check the Issues page
 2. Create a new issue if your problem isn't already addressed
 3. Contact the maintainers for urgent issues
 
@@ -165,4 +158,4 @@ If you have any questions or need help with the project, please:
 
 ---
 
-**Happy Data Analysis! 📊✨** 
+**Happy Café Data Analysis! ☕️📊✨** 
